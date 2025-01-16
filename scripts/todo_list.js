@@ -1,5 +1,5 @@
 const todoArr = [
-    {name: 'firsdo morning exercises',
+    {name: 'first to do morning exercises',
      duedate: '2025-01-09'   
     },
     {name: 'english',
@@ -10,7 +10,13 @@ const todoArr = [
 function addTodo () {
     const todoVal = document.querySelector('.js-input-todo');
     const name = todoVal.value;
-    todoArr.push(name);
+
+    const todoDate = document.querySelector('.js-input-date');
+    const dueDate = todoDate.value;
+
+    todoArr.push({
+        name : name,
+        duedate : dueDate});
    
  console.log(todoArr);
  exposeTodoList() ;
@@ -24,12 +30,23 @@ function exposeTodoList() {
         const todo_Object = todoArr[i];
         const name = todo_Object.name;
         const dueDate = todo_Object.duedate;
-        const html = `<p> ${name} ${dueDate} 
+        const html = 
+            `<div> ${name}</div>
+             <div>${dueDate} </div>
+            <button  class="js-button-delete"
+                onclick="todoArr.splice(${i}, 1);
+                exposeTodoList();">
+            Delete
+            </button>`
+ /*           `<p> ${name}
+            ${dueDate} 
             <button 
                 onclick="todoArr.splice(${i}, 1);
                 exposeTodoList();">
             Delete
-            </button><\p>`
+            </button>
+            </p>`
+            */
         div_todo_HTML += html;
        // div_todo_HTML += `<p> ${todo_item} <\p>`
     }

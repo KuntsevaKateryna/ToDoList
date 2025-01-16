@@ -1,0 +1,39 @@
+body {
+    font-family: Arial;
+}
+
+.js-grid-todo, .js-grid-input-todo {
+    display : grid;
+    grid-template-columns: 200px 150px 100px;
+    column-gap: 10px;
+    row-gap: 10px;
+    align-items: center;
+}
+
+.js-grid-input-todo {
+margin-bottom: 10px;
+align-items: stretch;
+}
+
+.js-input2-todo, .js-input2-date {
+    font-size: 15px;
+    padding: 6px;
+}
+
+.js-button-add {
+    background-color: green;
+    font-size: 15px;
+    border: none;
+    color:white ;
+    cursor: pointer;
+}
+
+.js-button-delete {
+    background-color: darkred;
+    font-size: 15px;
+    border: none;
+    color:white ;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
