@@ -1,9 +1,22 @@
 const todoArr = [];
+const addButton = document.querySelector('.js-button-add');
+addButton.addEventListener(
+    'click',
+    () =>{
+        addTodo (); 
+    }
+);
+const todoVal = document.querySelector('.js-input-todo');
+todoVal.addEventListener(
+    'keydown',
+    (event) =>{
+        if (event.key === 'Enter')
+            addTodo (); 
+    }
+);
 
 function addTodo () {
-    const todoVal = document.querySelector('.js-input-todo');
     const name = todoVal.value;
-
     const todoDate = document.querySelector('.js-input-date');
     const dueDate = todoDate.value;
 
