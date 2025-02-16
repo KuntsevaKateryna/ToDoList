@@ -30,7 +30,7 @@ function addTodo () {
 
 function exposeTodoList() {
     let div_todo_HTML = '';
-    todoArr.forEach( function(value, index) {
+    todoArr.forEach( (value, index) => {
         const todo_Object = todoArr[index];
         const name = todo_Object.name;
         const dueDate = todo_Object.duedate;
