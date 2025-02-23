@@ -37,16 +37,25 @@ function exposeTodoList() {
         const html = 
             `<div> ${name}</div>
              <div>${dueDate} </div>
-            <button  class="js-button-delete"
-                onclick="todoArr.splice(${index}, 1);
-                exposeTodoList();">
-            Delete
+            <button  class="js-button-delete">
+                Delete
             </button>`
         div_todo_HTML += html;
         }
-
     );
+
     console.log(div_todo_HTML);
     document.querySelector('.js-div_todo_list').innerHTML = div_todo_HTML;
     document.querySelector('.js-input-todo').value = '';
-}
+
+    document.querySelectorAll('.js-button-delete')
+        .forEach( 
+            function (deleteButton, index) {
+                deleteButton.addEventListener(
+                    'click',
+                    ()=> {
+                        todoArr.splice(index, 1);
+                        exposeTodoList();
+                    });
+            });
+    }
